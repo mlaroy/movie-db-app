@@ -1,20 +1,22 @@
 import { useContext } from 'react'
 import { AppContext } from '../context/appContext'
 import MovieThumb from '../components/MovieThumb'
-
+import Layout from "../components/Layout"
 const Favourites = () => {
     const { favourites } = useContext(AppContext);
 
     if(!favourites.length) return (
-        <div className="container mt-24">
-            <div className="movies">
-                <h2 className="text-2xl font-bold">No Favourites Yet!</h2>
+        <Layout>
+            <div className="container mt-24">
+                <div className="movies">
+                    <h2 className="text-2xl font-bold">No Favourites Yet!</h2>
+                </div>
             </div>
-        </div>
+        </Layout>
     )
 
     return (
-        <div>
+        <Layout>
             <div className="container">
                 <div className="movies">
                         <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
@@ -22,7 +24,7 @@ const Favourites = () => {
                         </ul>
                 </div>
             </div>
-        </div>
+        </Layout>
   )
 }
 

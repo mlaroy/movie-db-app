@@ -22,7 +22,7 @@ const Favorites = ({ movie }) => {
                     className="rounded bg-white/20 backdrop-blur-md px-2 py-1"
                     onClick={() => addFavourite(movie)}
                 >
-                <span className="text-yellow-500">❤️</span> Add to Favourites
+                    <span className="text-yellow-500">❤️</span> Add to Favourites
                 </button>
             )}
         </div>
