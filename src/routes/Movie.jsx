@@ -14,7 +14,7 @@ const Movie = () => {
 
 	useEffect(() => {
 		const fetchMovie = async () => {
-            const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&append_to_response=videos,images,credits`
+            const url = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&append_to_response=videos,images,credits,content_ratings`
             const res = await fetch(url)
             const data = await res.json()
             setMovie(data)
@@ -40,11 +40,15 @@ const Movie = () => {
         bg: 'min-h-screen h-full'
     }
 
+    const getRandomBackdrop = (backdrops) => {
+        return backdrops[Math.floor(Math.random() * backdrops.length)].file_path
+    }
+
 	return (
         <Layout>
             <div className={movieClasses.bg}>
                 <img
-                    src={buildImageURL(movie.backdrop_path, "original")}
+                    src={buildImageURL(getRandomBackdrop(movie.images.backdrops))}
                     alt={movie.title}
                     className="object-cover absolute inset-0 w-full opacity-20 h-full fade-in"
                 />
@@ -84,6 +88,9 @@ const Movie = () => {
                                 </div>
                                 <div className="mt-8">
                                     <Favorites movie={movie} />
+                                </div>
+                                <div className="mt-8">
+                                    See on <a href={`https://imdb.com/title/${movie.imdb_id}`} rel="noreferrer" className="underline hover:text-yellow-500 transition">IMDb</a>
                                 </div>
                             </div>
                         </div>
