@@ -54,7 +54,7 @@ const Movie = () => {
                     alt={movie.title}
                     className="object-cover absolute inset-0 w-full opacity-20 h-full fade-in"
                 />
-                <div className="container mt-24 overflow-x-hidden">
+                <div className="container mt-24 overflow-x-hidden relative">
                     <div className="flex gap-8">
                         <div className="poster w-1/4 sticky top-8">
                             <img
