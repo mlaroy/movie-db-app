@@ -18,6 +18,8 @@ const Movie = () => {
             const res = await fetch(url)
             const data = await res.json()
             setMovie(data)
+
+            document.title = `${data.title} - Movie App`
         }
 		fetchMovie()
 	}, [id])

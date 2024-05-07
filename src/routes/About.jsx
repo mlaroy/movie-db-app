@@ -1,8 +1,13 @@
-import React from "react"
+import { useEffect } from "react"
 import movieSvg from "../assets/movie-app-svg.svg"
 import Layout from "../components/Layout"
 
 const About = () => {
+
+    useEffect(() => {
+        document.title = `About - Movie App`;
+    })
+
 	return (
         <Layout>
             <div className="mt-16">

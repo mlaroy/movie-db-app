@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
 const apiKey = import.meta.env.VITE_MOVIEDB_API_KEY
 import SkeletonLoader from "../components/SkeletonLoader";
 import MovieThumb from "../components/MovieThumb";
@@ -34,6 +33,15 @@ const Home = () => {
 	const [isFetching, setIsFetching] = useState(false)
 
 	const skeletonArray = new Array(12).fill(0);
+
+    useEffect(() => {
+        if(!sort) {
+            document.title = `Movie App - Michael LaRoy`;
+        }
+        document.title = `${sort.label} Movies - Movie App`;
+    }, [sort])
+
+
 
 	const fetchMovies = async (sort) => {
 		setIsFetching(true)

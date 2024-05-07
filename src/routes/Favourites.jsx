@@ -1,9 +1,13 @@
-import { useContext } from 'react'
+import { useContext, useEffect } from 'react'
 import { AppContext } from '../context/appContext'
 import MovieThumb from '../components/MovieThumb'
 import Layout from "../components/Layout"
 const Favourites = () => {
     const { favourites } = useContext(AppContext);
+
+    useEffect(() => {
+        document.title = `Favourites - Movie App`;
+    })
 
     if(!favourites.length) return (
         <Layout>
