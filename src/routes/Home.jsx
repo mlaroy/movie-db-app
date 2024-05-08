@@ -47,7 +47,7 @@ const Home = () => {
 		setIsFetching(true)
 
 		try {
-			const url = `https://api.themoviedb.org/3/movie/${sort.url}?api_key=${apiKey}&page=1&include_adult=true`
+			const url = `https://api.themoviedb.org/3/movie/${sort.url}?api_key=${apiKey}&page=1`
 			const res = await fetch(url)
 			const data = await res.json()
 			setMovies(data.results)
