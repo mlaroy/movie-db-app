@@ -50,11 +50,11 @@ const Movie = () => {
         <Layout>
             <div className={movieClasses.bg}>
                 <div className="absolute inset-0 w-full h-full  gradient-mask-b-0">
-                    <img
-                        src={buildImageURL(getRandomBackdrop(movie.images.backdrops))}
+                    {movie.images.backdrop && <img
+                        src={buildImageURL(getRandomBackdrop(movie.images.backdrops)) }
                         alt={movie.title}
                         className="object-cover absolute inset-0 w-full opacity-50 h-full fade-in"
-                    />
+                    />}
                 </div>
                 <div className="container mt-24 overflow-x-hidden relative">
                     <div className="flex gap-8">
