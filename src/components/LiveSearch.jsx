@@ -41,7 +41,7 @@ const LiveSearch = () => {
                 type="search"
                 value={search}
                 placeholder="Search for a movie"
-                className="w-64 px-4 py-2 bg-slate-900 text-slate-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition text-lg" />
+                className="w-48 lg:w-64 p-2 lg:px-4 lg:py-2 bg-slate-900 text-slate-50 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500 transition text-sm lg:text-lg" />
         </form>
         <div className="results absolute top-full w-full rounded-b-md overflow-hidden fade-in-full max-h-96 overflow-y-scroll p-2">
             {results && results.map((result) => {
