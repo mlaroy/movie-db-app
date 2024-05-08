@@ -49,11 +49,13 @@ const Movie = () => {
 	return (
         <Layout>
             <div className={movieClasses.bg}>
-                <img
-                    src={buildImageURL(getRandomBackdrop(movie.images.backdrops))}
-                    alt={movie.title}
-                    className="object-cover absolute inset-0 w-full opacity-20 h-full fade-in"
-                />
+                <div className="absolute inset-0 w-full h-full  gradient-mask-b-0">
+                    <img
+                        src={buildImageURL(getRandomBackdrop(movie.images.backdrops))}
+                        alt={movie.title}
+                        className="object-cover absolute inset-0 w-full opacity-50 h-full fade-in"
+                    />
+                </div>
                 <div className="container mt-24 overflow-x-hidden relative">
                     <div className="flex gap-8">
                         <div className="poster w-1/4 sticky top-8">
@@ -69,14 +71,11 @@ const Movie = () => {
                                     <span>⭐</span>
                                     Average Rating: {movie?.vote_average.toFixed(1)}/10
                                 </div>
-                                <p className="font-bold mb-2">
-                                    {formatDate(movie.release_date)}
-                                </p>
                                 <h1 className="text-3xl md:text-5xl lg:text-7xl font-bold mb-4">
                                     {movie.title}
                                 </h1>
                                 <h2 className="italic mb-8">{movie.tagline}</h2>
-                                <p className="text-lg mt-4 max-w-2xl">
+                                <p className="text-lg max-w-2xl">
                                     {movie.overview}
                                 </p>
                                 <div className="flex items-center gap-2 mt-4">
@@ -88,6 +87,9 @@ const Movie = () => {
                                         )
                                     })}
                                 </div>
+                                <p className="font-bold mt-4 opacity-80">
+                                    {formatDate(movie.release_date)}
+                                </p>
                                 <div className="mt-8">
                                     <Favorites movie={movie} />
                                 </div>
