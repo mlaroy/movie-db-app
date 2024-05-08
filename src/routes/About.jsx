@@ -14,7 +14,7 @@ const About = () => {
                 <div className="container">
                     <h1 className="text-xl lg:text-3xl font-semibold mb-8">About</h1>
 
-                    <div className="max-w-xl mb-4">
+                    <div className="max-w-xl mb-8">
                         <p>
                             This is a simple movie app using the <a className="underline hover:text-yellow-500 transition" href="https://www.themoviedb.org/documentation/api" target="_blank" rel="noreferrer">The Movie Database (TMDb) API</a> to fetch movies.
                             This is for educational purposes only for the BCIT Front-End Developer program.

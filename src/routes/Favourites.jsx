@@ -11,9 +11,9 @@ const Favourites = () => {
 
     if(!favourites.length) return (
         <Layout>
-            <div className="container mt-24">
+            <div className="container mt-16">
                 <div className="movies">
-                    <h2 className="text-2xl font-bold">No Favourites Yet!</h2>
+                    <h2 className="text-xl lg:text-3xl font-semibold mb-8">No Favourites Yet!</h2>
                 </div>
             </div>
         </Layout>
@@ -21,8 +21,9 @@ const Favourites = () => {
 
     return (
         <Layout>
-            <div className="container">
+            <div className="container mt-16">
                 <div className="movies">
+                        <h2 className="text-xl lg:text-3xl font-semibold mb-8">Favourites</h2>
                         <ul className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
                             {favourites && favourites.map((movie) =>  <MovieThumb key={movie.id} movie={movie} />) }
                         </ul>
