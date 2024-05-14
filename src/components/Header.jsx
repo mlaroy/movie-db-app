@@ -79,6 +79,7 @@ const Header = () => {
                                     </svg>
                                 </button>
                                 <ul className="flex flex-col gap-4 text-lg text-center">
+                                    <li><a href="https://github.com/mlaroy/movie-db-app" className="hover:text-yellow-500 transition">GitHub</a></li>
                                     <li><NavLink to="/" className="hover:text-yellow-500 transition">Home</NavLink></li>
                                     <li><NavLink to="/about" className="hover:text-yellow-500 transition">About</NavLink></li>
                                     <li><NavLink to="/favourites" className="hover:text-yellow-500 transition">Favourites</NavLink></li>
