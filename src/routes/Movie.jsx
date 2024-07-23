@@ -43,22 +43,22 @@ const Movie = () => {
     }
 
     const getRandomBackdrop = (backdrops) => {
-        return backdrops[Math.floor(Math.random() * backdrops.length)].file_path
+        return backdrops[0].file_path
     }
 
 	return (
         <Layout>
             <div className={movieClasses.bg}>
                 <div className="absolute inset-0 w-full h-full  gradient-mask-b-0">
-                    {movie.images.backdrop && <img
+                    {movie.images.backdrops.length > 0 && <img
                         src={buildImageURL(getRandomBackdrop(movie.images.backdrops)) }
                         alt={movie.title}
                         className="object-cover absolute inset-0 w-full opacity-50 h-full fade-in"
                     />}
                 </div>
                 <div className="container mt-24 overflow-x-hidden relative">
-                    <div className="flex gap-8">
-                        <div className="poster w-1/4 sticky top-8">
+                    <div className="flex flex-col md:flex-row gap-8">
+                        <div className="poster md:w-1/4 sticky top-8">
                             <img
                                 src={movie.poster_path ? buildImageURL(movie.poster_path, "original") : noPoster}
                                 alt={movie.title}
